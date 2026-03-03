@@ -253,6 +253,11 @@ paymentModal.addEventListener('click', (e) => {
 whatsappOrderBtn.addEventListener('click', () => {
   if (!currentOrder.product) return;
 
+  const paymentOption = document.querySelector('input[name="paymentDone"]:checked').value;
+  const paymentStatusText = paymentOption === 'yes'
+    ? "✅ Payment completed! Find the screenshot attached."
+    : "⏳ Payment NOT completed (Cash on Delivery / Pay Later).";
+
   const message = `🫙 *BADARUDHEEN PICKLES - New Order!*
 
 📦 *Product:* ${currentOrder.product.name}
@@ -263,7 +268,7 @@ whatsappOrderBtn.addEventListener('click', () => {
 📮 *Pincode:* ${currentOrder.pincode}
 📱 *Phone:* ${currentOrder.phone}
 
-✅ Payment completed! You can also send a screenshot.
+${paymentStatusText}
 
 ---
 _Order via Badarudheen Pickles website_`;
@@ -273,7 +278,12 @@ _Order via Badarudheen Pickles website_`;
   window.open(whatsappUrl, '_blank');
 
   closePaymentModal();
-  showToast('Order sent via WhatsApp! ✅');
+
+  if (paymentOption === 'yes') {
+    showToast('Please attach the payment screenshot in WhatsApp! 📸');
+  } else {
+    showToast('Order sent via WhatsApp! ✅');
+  }
 
   // Reset form
   orderForm.reset();
