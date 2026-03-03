@@ -288,6 +288,10 @@ _Order via Badarudheen Pickles website_`;
 
   const encodedMsg = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/919526003488?text=${encodedMsg}`;
+
+  // Show alert before opening WhatsApp
+  alert('IMPORTANT ⚠️\n\nPlease attach the payment screenshot manually from your gallery when WhatsApp opens.');
+
   window.open(whatsappUrl, '_blank');
 
   closePaymentModal();
