@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Badarudheen Pickles - Authentic homemade Kerala pickles. No preservatives, no chemicals. Traditional recipes passed down through generations, delivered fresh to your doorstep.">
+  <meta name="keywords" content="Kerala pickle, homemade pickle, mango pickle, lime pickle, garlic pickle, Badarudheen">
+  <title>Badarudheen Pickles — Authentic Homemade Kerala Pickles</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫙</text></svg>">
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-left">
+      <a href="#" class="brand">Badarudheen<span> Pickles</span></a>
+      <div class="nav-divider"></div>
+      <div class="nav-location">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <a href="#" class="nav-link">Home</a>
+        <span class="nav-region">Kerala <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg></span>
+      </div>
+    </div>
+    <div class="navbar-right">
+      <button class="nav-icon-btn" id="searchBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        Search
+      </button>
+      <button class="nav-icon-btn cart-btn" id="cartBtn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-card hero-card-orange">
+      <div class="hero-badges">
+        <span class="hero-badge hero-badge-orange">100% Homemade</span>
+        <span class="hero-badge">• Since Generations</span>
+      </div>
+      <h2>Authentic Kerala Pickles, Made with Love.</h2>
+      <p>Handcrafted using traditional family recipes with the finest ingredients. From our kitchen to your table —
+        taste the real Kerala flavor.</p>
+      <a href="#products" class="hero-cta">ORDER NOW</a>
+    </div>
+    <div class="hero-card hero-card-dark">
+      <div class="hero-badges">
+        <span class="hero-badge hero-badge-orange">Farm Fresh Ingredients</span>
+      </div>
+      <h2>No Preservatives. Pure & Natural.</h2>
+      <p class="hero-quote">"Every jar is packed with authentic Kerala spices and sun-ripened ingredients."</p>
+      <div class="hero-tags">
+        <span class="hero-tag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          NO CHEMICALS
+        </span>
+        <span class="hero-tag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          HOMEMADE
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORY SECTION ===== -->
+  <section class="category-section" id="categories">
+    <h2 class="section-title">CHOOSE YOUR PICKLE</h2>
+    <div class="category-tabs" id="categoryTabs">
+      <button class="category-tab active" data-category="all">
+        <span class="emoji">🍱</span>
+        <span class="label">ALL</span>
+      </button>
+      <button class="category-tab" data-category="mango">
+        <span class="emoji">🥭</span>
+        <span class="label">MANGO</span>
+      </button>
+      <button class="category-tab" data-category="lime">
+        <span class="emoji">🍋</span>
+        <span class="label">LIME</span>
+      </button>
+      <button class="category-tab" data-category="garlic">
+        <span class="emoji">🧄</span>
+        <span class="label">GARLIC</span>
+      </button>
+      <button class="category-tab" data-category="chilli">
+        <span class="emoji">🌶️</span>
+        <span class="label">CHILLI</span>
+      </button>
+      <button class="category-tab" data-category="mixed">
+        <span class="emoji">🥗</span>
+        <span class="label">MIXED</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS + SIDEBAR ===== -->
+  <section class="products-section" id="products">
+    <div class="products-list">
+      <h2 class="products-header" id="productsHeader">ALL PICKLES</h2>
+      <div id="productsContainer">
+        <!-- Products rendered by JS -->
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <div class="shop-info-card">
+        <div class="shop-info-header">
+          <div>
+            <div class="shop-info-title">Badarudheen Pickles</div>
+            <div class="shop-info-subtitle">Handmade in Kerala</div>
+          </div>
+          <div class="rating-badge">4.8 ⭐</div>
+        </div>
+        <div class="shop-info-items">
+          <div class="shop-info-item">
+            <span class="shop-info-icon">📍</span>
+            <span>Made fresh in small batches for the best quality.</span>
+          </div>
+          <div class="shop-info-item">
+            <span class="shop-info-icon">✅</span>
+            <span>No artificial colors or preservatives added.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-header">
+          <span class="offer-icon">%</span>
+          <span class="offer-title">Offer</span>
+        </div>
+        <p class="offer-text">Use the code below to get ₹120 OFF on your first order.</p>
+        <div class="offer-code" id="offerCode" title="Click to copy">WELCOME120</div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-brand">Badarudheen Pickles</div>
+    <p class="footer-tagline">Authentic homemade Kerala pickles, crafted with tradition 💛</p>
+    <div class="footer-links">
+      <a href="#hero" class="footer-link">Home</a>
+      <a href="#categories" class="footer-link">Categories</a>
+      <a href="#products" class="footer-link">Products</a>
+      <a href="https://wa.me/919876543210" class="footer-link">WhatsApp</a>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">Made with <span class="footer-heart">❤️</span> by Badarudheen Pickles — © 2026</p>
+  </footer>
+
+  <!-- ===== ORDER MODAL ===== -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">DETAILS</div>
+          <div class="modal-title-underline"></div>
+        </div>
+        <button class="modal-close" id="orderModalClose">✕</button>
+      </div>
+
+      <div class="order-product-preview" id="orderProductPreview">
+        <img src="" alt="" class="order-product-img" id="orderProductImg">
+        <div>
+          <div class="order-product-name" id="orderProductName"></div>
+          <div class="order-product-price" id="orderProductPrice"></div>
+        </div>
+      </div>
+
+      <form id="orderForm">
+        <div class="form-group">
+          <label class="form-label" for="customerName">Name</label>
+          <input type="text" class="form-input" id="customerName" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="customerAddress">Address</label>
+          <textarea class="form-input" id="customerAddress" placeholder="House Name, Place, PO..." required></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="customerPincode">Pincode</label>
+            <input type="text" class="form-input" id="customerPincode" placeholder="682xxx" required maxlength="6">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="customerPhone">WhatsApp No</label>
+            <input type="tel" class="form-input" id="customerPhone" placeholder="9876xxxxxxx" required maxlength="10">
+          </div>
+        </div>
+        <button type="submit" class="btn-pay">Proceed to Pay →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== PAYMENT MODAL ===== -->
+  <div class="modal-overlay" id="paymentModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">PAYMENT</div>
+          <div class="modal-title-underline"></div>
+        </div>
+        <button class="modal-close" id="paymentModalClose">✕</button>
+      </div>
+
+      <div class="payment-qr-container">
+        <div class="qr-code-box" id="qrCodeBox">
+          <!-- QR Code will be rendered here -->
+        </div>
+        <div class="payment-scan-text">SCAN & PAY VIA UPI</div>
+        <div class="payment-upi-id">badarudheen@okicici</div>
+        <div class="payment-amount" id="paymentAmount">Amount: ₹120</div>
+      </div>
+
+      <div class="payment-note">
+        <span class="payment-note-icon">⚠️</span>
+        <p class="payment-note-text">After making the payment, click 'Order on WhatsApp'. Your details
+          will be sent to Badarudheen.</p>
+      </div>
+
+      <button class="btn-whatsapp" id="whatsappOrderBtn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        Order on WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== FLOATING BUTTONS ===== -->
+  <a href="https://wa.me/919876543210?text=Hi%20Badarudheen!%20I%20saw%20your%20website.%20I%20would%20like%20to%20order%20pickles!"
+    class="whatsapp-float" target="_blank" title="Contact us on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <button class="scroll-top" id="scrollTopBtn" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast"></div>
+
+  <!-- QR Code Library -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
