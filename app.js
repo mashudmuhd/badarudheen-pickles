@@ -269,7 +269,7 @@ whatsappOrderBtn.addEventListener('click', () => {
 _Order via Badarudheen Pickles website_`;
 
   const encodedMsg = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/919876543210?text=${encodedMsg}`;
+  const whatsappUrl = `https://wa.me/919526003488?text=${encodedMsg}`;
   window.open(whatsappUrl, '_blank');
 
   closePaymentModal();
