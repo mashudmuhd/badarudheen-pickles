@@ -246,15 +246,37 @@
 
       <div class="payment-status-check">
         <p class="payment-status-label">Did you complete the payment?</p>
-        <div class="payment-status-options">
-          <label class="payment-status-option">
+        <div class="status-toggle-container">
+          <label class="status-toggle-card">
             <input type="radio" name="paymentDone" value="yes" checked>
-            <span>Yes, payment done</span>
+            <div class="status-card-inner">
+              <div class="status-icon">✓</div>
+              <span>Yes, Paid</span>
+            </div>
           </label>
-          <label class="payment-status-option">
+          <label class="status-toggle-card">
             <input type="radio" name="paymentDone" value="no">
-            <span>No, Cash on Delivery</span>
+            <div class="status-card-inner">
+              <div class="status-icon">💸</div>
+              <span>Pay Later (COD)</span>
+            </div>
           </label>
+        </div>
+
+        <div class="screenshot-upload-container" id="screenshotContainer">
+          <label for="paymentScreenshot" class="screenshot-upload-label">
+            <div class="upload-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+            </div>
+            <span class="upload-text" id="uploadText">Attach Screenshot (Optional)</span>
+            <input type="file" id="paymentScreenshot" accept="image/*" class="screenshot-input">
+          </label>
+          <div class="screenshot-hint">You will need to manually share it on WhatsApp</div>
         </div>
       </div>
 

@@ -249,6 +249,36 @@ paymentModal.addEventListener('click', (e) => {
   if (e.target === paymentModal) closePaymentModal();
 });
 
+// ===== PAYMENT STATUS TOGGLE =====
+const paymentRadios = document.querySelectorAll('input[name="paymentDone"]');
+const screenshotContainer = document.getElementById('screenshotContainer');
+const paymentScreenshot = document.getElementById('paymentScreenshot');
+const uploadText = document.getElementById('uploadText');
+
+// Show by default since "Yes" is checked by default
+screenshotContainer.classList.add('active');
+
+paymentRadios.forEach(radio => {
+  radio.addEventListener('change', (e) => {
+    if (e.target.value === 'yes') {
+      screenshotContainer.classList.add('active');
+    } else {
+      screenshotContainer.classList.remove('active');
+    }
+  });
+});
+
+paymentScreenshot.addEventListener('change', (e) => {
+  if (e.target.files.length > 0) {
+    uploadText.textContent = e.target.files[0].name;
+    uploadText.parentElement.classList.add('has-file');
+    showToast('Screenshot selected! 📸 Don\'t forget to send it on WhatsApp.');
+  } else {
+    uploadText.textContent = 'Attach Screenshot (Optional)';
+    uploadText.parentElement.classList.remove('has-file');
+  }
+});
+
 // ===== WHATSAPP ORDER =====
 whatsappOrderBtn.addEventListener('click', () => {
   if (!currentOrder.product) return;
