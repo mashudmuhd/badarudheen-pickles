@@ -249,44 +249,27 @@ paymentModal.addEventListener('click', (e) => {
   if (e.target === paymentModal) closePaymentModal();
 });
 
-// ===== PAYMENT STATUS TOGGLE =====
-const paymentRadios = document.querySelectorAll('input[name="paymentDone"]');
+// ===== PAYMENT SCREENSHOT UPLOAD =====
 const screenshotContainer = document.getElementById('screenshotContainer');
 const paymentScreenshot = document.getElementById('paymentScreenshot');
 const uploadText = document.getElementById('uploadText');
-
-// Show by default since "Yes" is checked by default
-screenshotContainer.classList.add('active');
-
-paymentRadios.forEach(radio => {
-  radio.addEventListener('change', (e) => {
-    if (e.target.value === 'yes') {
-      screenshotContainer.classList.add('active');
-    } else {
-      screenshotContainer.classList.remove('active');
-    }
-  });
-});
 
 paymentScreenshot.addEventListener('change', (e) => {
   if (e.target.files.length > 0) {
     uploadText.textContent = e.target.files[0].name;
     uploadText.parentElement.classList.add('has-file');
-    showToast('Screenshot selected! 📸 Don\'t forget to send it on WhatsApp.');
+    whatsappOrderBtn.disabled = false;
+    showToast('Screenshot selected! 📸 Now click Order on WhatsApp.');
   } else {
-    uploadText.textContent = 'Attach Screenshot (Optional)';
+    uploadText.textContent = 'Attach Payment Screenshot (Required)';
     uploadText.parentElement.classList.remove('has-file');
+    whatsappOrderBtn.disabled = true;
   }
 });
 
 // ===== WHATSAPP ORDER =====
 whatsappOrderBtn.addEventListener('click', () => {
   if (!currentOrder.product) return;
-
-  const paymentOption = document.querySelector('input[name="paymentDone"]:checked').value;
-  const paymentStatusText = paymentOption === 'yes'
-    ? "✅ Payment completed! Find the screenshot attached."
-    : "⏳ Payment NOT completed (Cash on Delivery / Pay Later).";
 
   const message = `🫙 *BADARUDHEEN PICKLES - New Order!*
 
@@ -298,7 +281,7 @@ whatsappOrderBtn.addEventListener('click', () => {
 📮 *Pincode:* ${currentOrder.pincode}
 📱 *Phone:* ${currentOrder.phone}
 
-${paymentStatusText}
+✅ Payment completed! Find the screenshot attached.
 
 ---
 _Order via Badarudheen Pickles website_`;
@@ -309,14 +292,14 @@ _Order via Badarudheen Pickles website_`;
 
   closePaymentModal();
 
-  if (paymentOption === 'yes') {
-    showToast('Please attach the payment screenshot in WhatsApp! 📸');
-  } else {
-    showToast('Order sent via WhatsApp! ✅');
-  }
+  showToast('Please attach the payment screenshot in the WhatsApp chat! 📸');
 
   // Reset form
   orderForm.reset();
+  paymentScreenshot.value = '';
+  uploadText.textContent = 'Attach Payment Screenshot (Required)';
+  uploadText.parentElement.classList.remove('has-file');
+  whatsappOrderBtn.disabled = true;
   currentOrder = {};
   currentProduct = null;
 });

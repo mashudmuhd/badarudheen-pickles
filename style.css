@@ -1050,8 +1050,6 @@ textarea.form-input {
   flex-direction: column;
   gap: 8px;
   margin-bottom: 24px;
-  display: none;
-  /* hidden by default, shown via JS */
 }
 
 .screenshot-upload-container.active {
@@ -1111,9 +1109,17 @@ textarea.form-input {
   gap: 10px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  cursor: pointer;
+  border: none;
 }
 
-.btn-whatsapp:hover {
+.btn-whatsapp:disabled {
+  background: var(--border-medium);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-whatsapp:not(:disabled):hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
 }
